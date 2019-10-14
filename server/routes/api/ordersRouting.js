@@ -1,5 +1,5 @@
 //Get Post Put etc. Routes
-//example below
+//example below : KEEP IN MIND this example is referencing a structure wehre there is no server folder only client thus paths might be different
 
 
 /*
