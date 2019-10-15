@@ -1,6 +1,7 @@
 // client/src/App.js
 import React, { Component } from "react";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <div>
         <h2>For Goodness Cakes</h2>
         <Nav />
+        <Footer />
       </div>
     );
   }
