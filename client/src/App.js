@@ -1,7 +1,7 @@
 // /client/App.js
-import React, { Component } from 'react';
-import axios from 'axios';
-
+import React, { Component } from "react";
+import axios from "axios";
+import Nav from "./components/Nav";
 
 class App extends Component {
   // initialize our state
@@ -12,7 +12,7 @@ class App extends Component {
     intervalIsSet: false,
     idToDelete: null,
     idToUpdate: null,
-    objectToUpdate: null,
+    objectToUpdate: null
   };
 
   // when component mounts, first thing it does is fetch all existing data in our db
@@ -43,41 +43,41 @@ class App extends Component {
   // our first get method that uses our backend api to
   // fetch data from our data base
   getDataFromDb = () => {
-    fetch('http://localhost:3001/api/getData')
-      .then((data) => data.json())
-      .then((res) => this.setState({ data: res.data }));
+    fetch("http://localhost:3001/api/getData")
+      .then(data => data.json())
+      .then(res => this.setState({ data: res.data }));
   };
 
   // our put method that uses our backend api
   // to create new query into our data base
-  putDataToDB = (message) => {
-    let currentIds = this.state.data.map((data) => data.id);
+  putDataToDB = message => {
+    let currentIds = this.state.data.map(data => data.id);
     let idToBeAdded = 0;
     while (currentIds.includes(idToBeAdded)) {
       ++idToBeAdded;
     }
 
-    axios.post('http://localhost:3001/api/putData', {
+    axios.post("http://localhost:3001/api/putData", {
       id: idToBeAdded,
-      message: message,
+      message: message
     });
   };
 
   // our delete method that uses our backend api
   // to remove existing database information
-  deleteFromDB = (idTodelete) => {
+  deleteFromDB = idTodelete => {
     parseInt(idTodelete);
     let objIdToDelete = null;
-    this.state.data.forEach((dat) => {
+    this.state.data.forEach(dat => {
       if (dat.id == idTodelete) {
         objIdToDelete = dat._id;
       }
     });
 
-    axios.delete('http://localhost:3001/api/deleteData', {
+    axios.delete("http://localhost:3001/api/deleteData", {
       data: {
-        id: objIdToDelete,
-      },
+        id: objIdToDelete
+      }
     });
   };
 
@@ -86,15 +86,15 @@ class App extends Component {
   updateDB = (idToUpdate, updateToApply) => {
     let objIdToUpdate = null;
     parseInt(idToUpdate);
-    this.state.data.forEach((dat) => {
+    this.state.data.forEach(dat => {
       if (dat.id == idToUpdate) {
         objIdToUpdate = dat._id;
       }
     });
 
-    axios.post('http://localhost:3001/api/updateData', {
+    axios.post("http://localhost:3001/api/updateData", {
       id: objIdToUpdate,
-      update: { message: updateToApply },
+      update: { message: updateToApply }
     });
   };
 
@@ -102,73 +102,72 @@ class App extends Component {
   // it is easy to understand their functions when you
   // see them render into our screen
   render() {
-
-      const h1 = {
+    const h1 = {
       color: "white",
       backgroundColor: "DodgerBlue",
       padding: "1px",
-      width:"400px",
+      width: "400px",
       fontFamily: "Arial",
       margin: "30px 200px 30px 30px"
-      
     };
 
     const h2 = {
-      color:"red",
+      color: "red",
       margin: "30px"
-    }
+    };
 
     const { data } = this.state;
     return (
-      
       <div>
+        <Nav />
         <h1 style={h1}>For GoodNess Cakes! </h1>
         <h2 style={h2}>Place your order here: </h2>
 
         <ul>
           {data.length <= 0
-            ? 'YOUR CAR IS EMPTY'
-            : data.map((dat) => (
-                <li style={{ padding: '10px' }} key={data.message}>
-                  <span style={{ color: 'gray' }}> Pie id: </span> {dat.id} <br />
-                  <span style={{ color: 'gray' }}> Name: </span>
+            ? "YOUR CAR IS EMPTY"
+            : data.map(dat => (
+                <li style={{ padding: "10px" }} key={data.message}>
+                  <span style={{ color: "gray" }}> Pie id: </span> {dat.id}{" "}
+                  <br />
+                  <span style={{ color: "gray" }}> Name: </span>
                   {dat.message}
                 </li>
               ))}
         </ul>
-        <div style={{ padding: '10px' }}>
+        <div style={{ padding: "10px" }}>
           <input
             type="text"
-            onChange={(e) => this.setState({ message: e.target.value })}
+            onChange={e => this.setState({ message: e.target.value })}
             placeholder="Add your pie here"
-            style={{ width: '200px' }}
+            style={{ width: "200px" }}
           />
           <button onClick={() => this.putDataToDB(this.state.message)}>
             ADD
           </button>
         </div>
-        <div style={{ padding: '10px' }}>
+        <div style={{ padding: "10px" }}>
           <input
             type="text"
-            style={{ width: '200px' }}
-            onChange={(e) => this.setState({ idToDelete: e.target.value })}
+            style={{ width: "200px" }}
+            onChange={e => this.setState({ idToDelete: e.target.value })}
             placeholder="Type id of Pie to delete here"
           />
           <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
             DELETE
           </button>
         </div>
-        <div style={{ padding: '10px' }}>
+        <div style={{ padding: "10px" }}>
           <input
             type="text"
-            style={{ width: '200px' }}
-            onChange={(e) => this.setState({ idToUpdate: e.target.value })}
+            style={{ width: "200px" }}
+            onChange={e => this.setState({ idToUpdate: e.target.value })}
             placeholder="id of item to update here"
           />
           <input
             type="text"
-            style={{ width: '200px' }}
-            onChange={(e) => this.setState({ updateToApply: e.target.value })}
+            style={{ width: "200px" }}
+            onChange={e => this.setState({ updateToApply: e.target.value })}
             placeholder="Type new Pie here"
           />
           <button
