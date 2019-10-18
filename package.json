@@ -1,0 +1,30 @@
+{
+  "name": "forgoodnesscakes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+<<<<<<< HEAD
+    "concurrently": "^5.0.0"
+=======
+    "axios": "^0.19.0",
+    "concurrently": "^5.0.0",
+    "react-router-dom": "^5.1.2"
+>>>>>>> b74c8c49fe028c0046e99afe8491d5c5003fc327
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julioguzman19/ForGoodnessCakes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/julioguzman19/ForGoodnessCakes/issues"
+  },
+  "homepage": "https://github.com/julioguzman19/ForGoodnessCakes#readme"
+}
