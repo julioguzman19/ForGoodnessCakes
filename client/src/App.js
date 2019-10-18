@@ -1,6 +1,8 @@
 // /client/App.js
 import React, { Component } from "react";
 import Nav from "./components/Nav";
+
+//import DB from "./components/DB";
 import DB from "./components/DB";
 import axios from 'axios';
 
@@ -21,7 +23,7 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <DB />
+       {/* <DB /> */}
       </div>
     );
   }
