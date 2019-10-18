@@ -1,10 +1,38 @@
-const path = require("path");
-const router = require("express").Router();
-const apiRoutes = require("./api");
-// API Routes
-router.use("/api", apiRoutes);
-// If no API routes are hit, send the React app
-router.use(function (req, res) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-module.exports = router;
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch
+} from "react-router-dom";
+
+
+export default function NestedRoutes() {
+  return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/menu">
+            <Menu />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
