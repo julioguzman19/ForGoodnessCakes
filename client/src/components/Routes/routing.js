@@ -13,11 +13,6 @@ export default function NestingExample() {
     <Router>
       <div>
         <h1 style={{ color: "red" }}>For GoodNess Cakes</h1>
-        <Link to="/">
-          <h2 style={{ textAlign: "left" }}></h2>Home
-        </Link>
-
-        <h1 style={{ color: "red" }}>For GoodNess Cakes</h1>
         <Link to="/">Home</Link>
 
         <Link to="/topics"> Order Now</Link>
