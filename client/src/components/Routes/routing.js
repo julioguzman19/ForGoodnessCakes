@@ -1,5 +1,6 @@
 import React from "react";
 import DB from "../DB";
+import Menu from "../Menu";
 import {
   BrowserRouter as Router,
   Switch,
@@ -50,11 +51,14 @@ function Topics() {
   return (
     <div>
       <h2>Your Order</h2>
-      <DB />
+
+      <div></div>
 
       <Switch>
         <Route exact path={path}>
           <h4 style={{ color: "black" }}>Please Choose From Our Menu : </h4>
+          <Menu />
+          <DB />
         </Route>
         <Route path={`${path}/:topicId`}>
           <Topic />
