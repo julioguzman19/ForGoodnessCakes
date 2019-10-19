@@ -1,5 +1,6 @@
 import React from "react";
-
+import DB from "../DB";
+import Menu from "../Menu";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,17 +10,14 @@ import {
   useRouteMatch
 } from "react-router-dom";
 
-
 export default function NestingExample() {
   return (
-
     <Router>
-      <div> 
+      <div>
+        <h1 style={{ color: "red" }}>For GoodNess Cakes</h1>
+        <Link to="/">Home</Link>
 
-        <h1  style={{color: "red"}}>For GoodNess Cakes</h1>
-            <Link to="/">Home</Link>
-          
-            <Link to="/topics"> Order Now</Link>
+        <Link to="/topics"> Order Now</Link>
 
         <hr />
 
@@ -53,11 +51,14 @@ function Topics() {
   return (
     <div>
       <h2>Your Order</h2>
-      
+
+      <div></div>
 
       <Switch>
         <Route exact path={path}>
-          <h4 style={{color: "black"}}>Please Choose From Our Menu : </h4>
+          <h4 style={{ color: "black" }}>Please Choose From Our Menu : </h4>
+          <Menu />
+          <DB />
         </Route>
         <Route path={`${path}/:topicId`}>
           <Topic />
