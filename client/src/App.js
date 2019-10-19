@@ -24,25 +24,10 @@ class App extends Component {
       <Routing></Routing>
     )
   };
-
- 
-
-
-class App extends Component {
-  render() {
-
-    return (
-      <div>
-        <Nav />
-       {/* <DB /> */}
-      </div>
-    );
-    
-    return (
-      <Routing></Routing>
-    )
- 
-  }
 }
+ 
+
+
+
 
 export default App;
