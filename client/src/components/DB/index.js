@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./style.css";
 
 class DB extends Component {
   // initialize our state
@@ -116,9 +117,8 @@ class DB extends Component {
 
     const { data } = this.state;
     return (
-      <div>
-        <h1 style={h1}>For GoodNess Cakes! </h1>
-        <h2 style={h2}>Place your order here: </h2>
+      <div class="cart">
+  
 
         <ul>
           {data.length <= 0
