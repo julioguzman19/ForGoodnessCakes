@@ -10,13 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-    "concurrently": "^5.0.0"
-=======
     "axios": "^0.19.0",
     "concurrently": "^5.0.0",
     "react-router-dom": "^5.1.2"
->>>>>>> b74c8c49fe028c0046e99afe8491d5c5003fc327
   },
   "devDependencies": {},
   "repository": {

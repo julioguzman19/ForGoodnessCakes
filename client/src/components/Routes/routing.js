@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,18 +9,17 @@ import {
   useRouteMatch
 } from "react-router-dom";
 
+
 export default function NestingExample() {
   return (
+
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
+      <div> 
+
+        <h1  style={{color: "red"}}>For GoodNess Cakes</h1>
+            <Link to="/"><h2 style={{textAlign: "left"}}></h2>Home</Link>
+          
+            <Link to="/topics"> Order Now</Link>
 
         <hr />
 
@@ -39,7 +39,7 @@ export default function NestingExample() {
 function Home() {
   return (
     <div>
-      <h2>Home</h2>
+      <h2></h2>
     </div>
   );
 }
