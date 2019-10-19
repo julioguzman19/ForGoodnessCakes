@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,11 +12,14 @@ export default function NestingExample() {
   return (
     <Router>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <Link to="/">Home</Link>
-          <Link to="/topics">Topics</Link>
-          <hr />
-        </nav>
+        <h1 style={{ color: "red" }}>For GoodNess Cakes</h1>
+        <Link to="/">
+          <h2 style={{ textAlign: "left" }}></h2>Home
+        </Link>
+
+        <Link to="/topics"> Order Now</Link>
+
+        <hr />
 
         <Switch>
           <Route exact path="/">
@@ -35,7 +37,7 @@ export default function NestingExample() {
 function Home() {
   return (
     <div>
-      <h2>Home</h2>
+      <h2></h2>
     </div>
   );
 }
