@@ -17,7 +17,7 @@ export default function NestingExample() {
       <div> 
 
         <h1  style={{color: "red"}}>For GoodNess Cakes</h1>
-            <Link to="/"><h2 style={{textAlign: "left"}}></h2>Home</Link>
+            <Link to="/">Home</Link>
           
             <Link to="/topics"> Order Now</Link>
 
@@ -52,22 +52,12 @@ function Topics() {
 
   return (
     <div>
-      <h2>Topics</h2>
-      <ul>
-        <li>
-          <Link to={`${url}/rendering`}>Rendering with React</Link>
-        </li>
-        <li>
-          <Link to={`${url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${url}/props-v-state`}>Props v. State</Link>
-        </li>
-      </ul>
+      <h2>Your Order</h2>
+      
 
       <Switch>
         <Route exact path={path}>
-          <h3>Please select a topic.</h3>
+          <h4 style={{color: "black"}}>Please Choose From Our Menu : </h4>
         </Route>
         <Route path={`${path}/:topicId`}>
           <Topic />
