@@ -1,4 +1,5 @@
 import React from "react";
+import DB from "../DB";
 import {
   BrowserRouter as Router,
   Switch,
@@ -49,6 +50,7 @@ function Topics() {
   return (
     <div>
       <h2>Your Order</h2>
+      <DB />
 
       <Switch>
         <Route exact path={path}>
