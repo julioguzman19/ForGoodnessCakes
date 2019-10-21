@@ -1,5 +1,6 @@
 import React from "react";
 import DB from "../DB";
+import Title from "../Title";
 import Menu from "../Menu";
 import {
   BrowserRouter as Router,
@@ -15,8 +16,10 @@ export default function NestingExample() {
   return (
     <Router>
       <div>
-        <h1 style={{ color: "red" }}>For GoodNess Cakes</h1>
-        <Link to="/" class="t">Home</Link>
+        <Title />
+        <Link to="/" class="t">
+          Home
+        </Link>
 
         <Link to="/topics"> Order Now</Link>
 
@@ -61,12 +64,8 @@ function Topics() {
           <Menu />
           <DB />
         </Route>
-        <Route path={`${path}/:topicId`}>
-         
-        </Route>
+        <Route path={`${path}/:topicId`}></Route>
       </Switch>
     </div>
   );
 }
-
-
