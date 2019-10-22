@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./style.css";
 
 class DB extends Component {
   // initialize our state
@@ -50,7 +51,7 @@ class DB extends Component {
   // to create new query into our data base
   putDataToDB = message => {
     let currentIds = this.state.data.map(data => data.id);
-    let idToBeAdded = 0;
+    let idToBeAdded = 1;
     while (currentIds.includes(idToBeAdded)) {
       ++idToBeAdded;
     }
@@ -100,32 +101,16 @@ class DB extends Component {
   // it is easy to understand their functions when you
   // see them render into our screen
   render() {
-    const h1 = {
-      color: "white",
-      backgroundColor: "DodgerBlue",
-      padding: "1px",
-      width: "400px",
-      fontFamily: "Arial",
-      margin: "30px 200px 30px 30px"
-    };
-
-    const h2 = {
-      color: "red",
-      margin: "30px"
-    };
-
     const { data } = this.state;
     return (
-      <div>
-        <h1 style={h1}>For GoodNess Cakes! </h1>
-        <h2 style={h2}>Place your order here: </h2>
+      <div class="cart">
 
         <ul>
           {data.length <= 0
             ? "YOUR CAR IS EMPTY"
             : data.map(dat => (
                 <li style={{ padding: "10px" }} key={data.message}>
-                  <span style={{ color: "gray" }}> Pie id: </span> {dat.id}{" "}
+                  <span style={{ color: "gray" }}> item: </span> {dat.id}{" "}
                   <br />
                   <span style={{ color: "gray" }}> Name: </span>
                   {dat.message}
@@ -136,7 +121,7 @@ class DB extends Component {
           <input
             type="text"
             onChange={e => this.setState({ message: e.target.value })}
-            placeholder="Add your pie here"
+            placeholder="Add Your Pie"
             style={{ width: "200px" }}
           />
           <button onClick={() => this.putDataToDB(this.state.message)}>
@@ -148,34 +133,24 @@ class DB extends Component {
             type="text"
             style={{ width: "200px" }}
             onChange={e => this.setState({ idToDelete: e.target.value })}
-            placeholder="Type id of Pie to delete here"
+            placeholder="Type id to Remove"
           />
           <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-            DELETE
+            REMOVE
           </button>
+          
         </div>
+
         <div style={{ padding: "10px" }}>
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ idToUpdate: e.target.value })}
-            placeholder="id of item to update here"
-          />
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ updateToApply: e.target.value })}
-            placeholder="Type new Pie here"
-          />
-          <button
-            onClick={() =>
-              this.updateDB(this.state.idToUpdate, this.state.updateToApply)
-            }
-          >
-            UPDATE
+      
+          <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
+            Checkout
           </button>
+          
         </div>
+
       </div>
+      
     );
   }
 }
