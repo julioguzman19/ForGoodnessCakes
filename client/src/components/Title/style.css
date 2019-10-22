@@ -1,7 +1,9 @@
 .title {
   font-style: oblique;
-  font-family: cursive;
+  font-family: "cursive";
   flex: center;
   font-size: 48px;
   margin-top: 10px;
+  color: rgb(85, 18, 18);
+  font: bolder;
 }
