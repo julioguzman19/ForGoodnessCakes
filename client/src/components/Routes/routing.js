@@ -10,6 +10,8 @@ import {
   useRouteMatch
 } from "react-router-dom";
 import "./style.css";
+import LoginForm from "../LoginForm/loginform";
+
 
 export default function NestingExample() {
   return (
@@ -38,7 +40,8 @@ export default function NestingExample() {
 function Home() {
   return (
     <div>
-      <h2></h2>
+      <LoginForm />
+      
     </div>
   );
 }
