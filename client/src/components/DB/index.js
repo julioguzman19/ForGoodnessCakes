@@ -11,9 +11,11 @@ class DB extends Component {
     intervalIsSet: false,
     idToDelete: null,
     idToUpdate: null,
-    objectToUpdate: null
-  };
+    objectToUpdate: null,
+    isHidden: true
+  }
 
+ 
   // when component mounts, first thing it does is fetch all existing data in our db
   // then we incorporate a polling logic so that we can easily see if our db has
   // changed and implement those changes into our UI
@@ -143,10 +145,11 @@ class DB extends Component {
 
         <div style={{ padding: "10px" }}>
       
-          <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-            Checkout
-          </button>
-          
+        <button onClick={this.isHidden} >
+          Checkout
+        </button>
+        {!this.state.isHidden}
+        
         </div>
 
       </div>

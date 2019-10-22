@@ -1,6 +1,8 @@
 import React from "react";
 import DB from "../DB";
 import Menu from "../Menu";
+import Main from "../Main";
+
 import "./style.css";
 
 import {
@@ -46,9 +48,15 @@ export default function NestingExample() {
 
 function Home() {
   return (
-    <div>
-      <h2></h2>
+
+
+
+    <switch>
+    <div id="home">
+      <Main />
+
     </div>
+    </switch>
   );
 }
 
