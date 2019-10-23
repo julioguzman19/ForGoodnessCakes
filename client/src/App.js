@@ -1,10 +1,6 @@
 // /client/App.js
-
-
 import React, { Component } from "react";
-
-import axios from 'axios';
-
+import Routing from "./components/Routes/routing";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,14 +13,8 @@ import Routing from './components/Routes/routing';
 
 class App extends Component {
   render() {
-    return (
-      <Routing></Routing>
-    )
-  };
+    return <Routing></Routing>;
+  }
 }
- 
-
-
-
 
 export default App;

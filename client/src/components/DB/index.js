@@ -106,7 +106,6 @@ class DB extends Component {
     const { data } = this.state;
     return (
       <div class="cart">
-
         <ul>
           {data.length <= 0
             ? "YOUR CAR IS EMPTY"
