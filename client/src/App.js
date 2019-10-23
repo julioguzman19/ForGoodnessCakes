@@ -9,7 +9,6 @@ import {
   useParams,
   useRouteMatch
 } from "react-router-dom";
-import Routing from './components/Routes/routing';
 
 class App extends Component {
   render() {

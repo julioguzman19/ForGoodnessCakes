@@ -1,8 +1,8 @@
 import React from "react";
 import DB from "../DB";
 import Menu from "../Menu";
-import Main from "../Main";
-
+import Title from "../Title";
+import HomeBody from "../HomeBody";
 import "./style.css";
 
 import {
@@ -13,26 +13,19 @@ import {
   useParams,
   useRouteMatch
 } from "react-router-dom";
-import "./style.css";
 
 export default function NestingExample() {
   return (
     <Router>
-       <div>
+      <div>
+        <Title />
 
-          <div>
-          <h1>For GoodNess Cakes</h1>
-          </div>
+        <div id="menu">
+          <Link to="/">Home</Link>
 
-          <div id="menu">
-           <Link to="/">Home</Link>
-          
-            <Link to="/topics"> Order Now</Link>
-          </div>
+          <Link to="/topics"> Order Now</Link>
+        </div>
 
-        <Link to="/topics"> Order Now</Link>
-        <hr />
-        <HomeBody />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -48,14 +41,10 @@ export default function NestingExample() {
 
 function Home() {
   return (
-
-
-
     <switch>
-    <div id="home">
-      <Main />
-
-    </div>
+      <div id="home">
+        <HomeBody />
+      </div>
     </switch>
   );
 }
@@ -67,14 +56,14 @@ function Topics() {
   let { path, url } = useRouteMatch();
 
   return (
-    <div>      
+    <div>
       <Switch>
         <Route exact path={path}>
           <Menu />
           <DB />
         </Route>
         <Route path={`${path}/:topicId`}>
-          <Topic />
+          <Topics />
         </Route>
         <Route path={`${path}/:topicId`}></Route>
       </Switch>
