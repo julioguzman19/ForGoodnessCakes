@@ -1,5 +1,12 @@
 import React from "react";
 import DB from "../DB";
+<<<<<<< HEAD
+=======
+import Menu from "../Menu";
+import Title from "../Title";
+import HomeBody from "../HomeBody";
+import "./style.css";
+>>>>>>> dev
 
 import {
   BrowserRouter as Router,
@@ -10,19 +17,17 @@ import {
   useRouteMatch
 } from "react-router-dom";
 
-
 export default function NestingExample() {
   return (
-
     <Router>
-      <div> 
+      <div>
+        <Title />
 
-        <h1  style={{color: "red"}}>For GoodNess Cakes</h1>
-            <Link to="/">Home</Link>
-          
-            <Link to="/topics"> Order Now</Link>
+        <div id="menu">
+          <Link to="/">Home</Link>
 
-        <hr />
+          <Link to="/topics"> Order Now</Link>
+        </div>
 
         <Switch>
           <Route exact path="/">
@@ -39,9 +44,11 @@ export default function NestingExample() {
 
 function Home() {
   return (
-    <div>
-      <h2></h2>
-    </div>
+    <switch>
+      <div id="home">
+        <HomeBody />
+      </div>
+    </switch>
   );
 }
 
@@ -53,6 +60,7 @@ function Topics() {
 
   return (
     <div>
+<<<<<<< HEAD
       <h2>Your Order</h2>
       
     
@@ -60,26 +68,18 @@ function Topics() {
         <Route exact path={path}>
           <h4 style={{color: "green"}}>Please Choose From Our Menu : </h4>
 
+=======
+      <Switch>
+        <Route exact path={path}>
+          <Menu />
+>>>>>>> dev
           <DB />
         </Route>
         <Route path={`${path}/:topicId`}>
-          <Topic />
+          <Topics />
         </Route>
+        <Route path={`${path}/:topicId`}></Route>
       </Switch>
-    </div>
-  );
-}
-
-function Topic() {
-  // The <Route> that rendered this component has a
-  // path of `/topics/:topicId`. The `:topicId` portion
-  // of the URL indicates a placeholder that we can
-  // get from `useParams()`.
-  let { topicId } = useParams();
-
-  return (
-    <div>
-      <h3>{topicId}</h3>
     </div>
   );
 }

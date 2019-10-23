@@ -1,10 +1,6 @@
 // /client/App.js
-
-
 import React, { Component } from "react";
-
-import axios from 'axios';
-
+import Routing from "./components/Routes/routing";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,35 +9,10 @@ import {
   useParams,
   useRouteMatch
 } from "react-router-dom";
-import Routing from './components/Routes/routing';
-
-
-
 
 class App extends Component {
   render() {
-    return (
-      <Routing></Routing>
-    )
-  };
-
- 
-
-
-class App extends Component {
-  render() {
-
-    return (
-      <div>
-        <Nav />
-       {/* <DB /> */}
-      </div>
-    );
-    
-    return (
-      <Routing></Routing>
-    )
- 
+    return <Routing></Routing>;
   }
 }
 
