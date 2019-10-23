@@ -16,6 +16,9 @@ import {
   useParams,
   useRouteMatch
 } from "react-router-dom";
+import "./style.css";
+import LoginForm from "../LoginForm/loginform";
+
 
 export default function NestingExample() {
   return (
@@ -46,6 +49,7 @@ function Home() {
   return (
     <switch>
       <div id="home">
+        <LoginForm />
         <HomeBody />
       </div>
     </switch>

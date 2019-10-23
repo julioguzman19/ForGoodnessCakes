@@ -13,9 +13,8 @@ class DB extends Component {
     idToUpdate: null,
     objectToUpdate: null,
     isHidden: true
-  }
+  };
 
- 
   // when component mounts, first thing it does is fetch all existing data in our db
   // then we incorporate a polling logic so that we can easily see if our db has
   // changed and implement those changes into our UI
@@ -111,8 +110,7 @@ class DB extends Component {
             ? "YOUR CAR IS EMPTY"
             : data.map(dat => (
                 <li style={{ padding: "10px" }} key={data.message}>
-                  <span style={{ color: "gray" }}> item: </span> {dat.id}{" "}
-                  <br />
+                  <span style={{ color: "gray" }}> item: </span> {dat.id} <br />
                   <span style={{ color: "gray" }}> Name: </span>
                   {dat.message}
                 </li>
@@ -139,20 +137,13 @@ class DB extends Component {
           <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
             REMOVE
           </button>
-          
         </div>
 
         <div style={{ padding: "10px" }}>
-      
-        <button onClick={this.isHidden} >
-          Checkout
-        </button>
-        {!this.state.isHidden}
-        
+          <button onClick={this.isHidden}>Checkout</button>
+          {!this.state.isHidden}
         </div>
-
       </div>
-      
     );
   }
 }
