@@ -44,18 +44,12 @@ export default function NestingExample() {
 
 function Home() {
   return (
-<<<<<<< HEAD
-    <div>
-      <LoginForm />
-      
-    </div>
-=======
     <switch>
       <div id="home">
+        <LoginForm />
         <HomeBody />
       </div>
     </switch>
->>>>>>> 6ee7d6619b1e88f5faf5b3f0655288787a524f01
   );
 }
 

@@ -3,8 +3,6 @@ import axios from "axios";
 import "./style.css";
 
 class DB extends Component {
-<<<<<<< HEAD
-=======
   // initialize our state
   state = {
     data: [],
@@ -104,7 +102,6 @@ class DB extends Component {
   // here is our UI
   // it is easy to understand their functions when you
   // see them render into our screen
->>>>>>> 6ee7d6619b1e88f5faf5b3f0655288787a524f01
   render() {
     const { data } = this.state;
     return (
