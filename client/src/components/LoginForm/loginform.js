@@ -53,7 +53,7 @@ class LoginForm extends Component {
                         </div>
                         <div className="form-group ">
                             <button
-                                className="btn btn-primary"
+                                className="btn btn-lg"
                                 id="loginButton"
                                 onClick={this.handleSubmit}
                                 type="submit">Submit</button>
