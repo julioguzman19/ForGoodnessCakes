@@ -1,3 +1,23 @@
-.menu {
-  background: blue;
-}
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+    width:40%;
+    margin-left: 20px
+  }
+  
+  #panel {
+    display:fixed;
+    height: 300px;
+  }
+   h2, h4 {
+    margin-left: 20px;
+    color: brown;
+
+   }
+
+   h4{
+       color: green;
+       margin-bottom: 20px;
+   }

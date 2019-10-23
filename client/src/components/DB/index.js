@@ -4,20 +4,6 @@ import "./style.css";
 
 class DB extends Component {
   render() {
-    const h1 = {
-      color: "white",
-      backgroundColor: "DodgerBlue",
-      padding: "1px",
-      width: "400px",
-      fontFamily: "Arial",
-      margin: "30px 200px 30px 30px"
-    };
-
-    const h2 = {
-      color: "red",
-      margin: "30px"
-    };
-
     const { data } = this.state;
     return (
       <div class="cart">
@@ -26,7 +12,7 @@ class DB extends Component {
             ? "YOUR CAR IS EMPTY"
             : data.map(dat => (
                 <li style={{ padding: "10px" }} key={data.message}>
-                  <span style={{ color: "gray" }}> Pie id: </span> {dat.id}{" "}
+                  <span style={{ color: "gray" }}> item: </span> {dat.id}{" "}
                   <br />
                   <span style={{ color: "gray" }}> Name: </span>
                   {dat.message}
@@ -37,7 +23,7 @@ class DB extends Component {
           <input
             type="text"
             onChange={e => this.setState({ message: e.target.value })}
-            placeholder="Add your pie here"
+            placeholder="Add Your Pie"
             style={{ width: "200px" }}
           />
           <button onClick={() => this.putDataToDB(this.state.message)}>
@@ -49,34 +35,25 @@ class DB extends Component {
             type="text"
             style={{ width: "200px" }}
             onChange={e => this.setState({ idToDelete: e.target.value })}
-            placeholder="Type id of Pie to delete here"
+            placeholder="Type id to Remove"
           />
           <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-            DELETE
+            REMOVE
           </button>
+          
         </div>
+
         <div style={{ padding: "10px" }}>
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ idToUpdate: e.target.value })}
-            placeholder="id of item to update here"
-          />
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ updateToApply: e.target.value })}
-            placeholder="Type new Pie here"
-          />
-          <button
-            onClick={() =>
-              this.updateDB(this.state.idToUpdate, this.state.updateToApply)
-            }
-          >
-            UPDATE
-          </button>
+      
+        <button onClick={this.isHidden} >
+          Checkout
+        </button>
+        {!this.state.isHidden}
+        
         </div>
+
       </div>
+      
     );
   }
 }

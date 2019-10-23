@@ -1,8 +1,10 @@
 import React from "react";
 import DB from "../DB";
-import Title from "../Title";
 import Menu from "../Menu";
+import Title from "../Title";
 import HomeBody from "../HomeBody";
+import "./style.css";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,13 +22,13 @@ export default function NestingExample() {
     <Router>
       <div>
         <Title />
-        <Link to="/" class="t">
-          Home
-        </Link>
 
-        <Link to="/topics"> Order Now</Link>
-        <hr />
-        <HomeBody />
+        <div id="menu">
+          <Link to="/">Home</Link>
+
+          <Link to="/topics"> Order Now</Link>
+        </div>
+
         <Switch>
           <Route exact path="/">
             <Home />
@@ -42,10 +44,12 @@ export default function NestingExample() {
 
 function Home() {
   return (
-    <div>
-      <LoginForm />
-      
-    </div>
+    <switch>
+      <div id="home">
+        <LoginForm />
+        <HomeBody />
+      </div>
+    </switch>
   );
 }
 
@@ -57,13 +61,13 @@ function Topics() {
 
   return (
     <div>
-      <h2>Your Order</h2>
-      <div></div>
       <Switch>
         <Route exact path={path}>
-          <h4 style={{ color: "black" }}>Please Choose From Our Menu : </h4>
           <Menu />
           <DB />
+        </Route>
+        <Route path={`${path}/:topicId`}>
+          <Topics />
         </Route>
         <Route path={`${path}/:topicId`}></Route>
       </Switch>
