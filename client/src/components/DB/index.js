@@ -13,9 +13,8 @@ class DB extends Component {
     idToUpdate: null,
     objectToUpdate: null,
     isHidden: true
-  }
+  };
 
- 
   // when component mounts, first thing it does is fetch all existing data in our db
   // then we incorporate a polling logic so that we can easily see if our db has
   // changed and implement those changes into our UI
@@ -105,54 +104,55 @@ class DB extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div class="cart">
-        <ul>
-          {data.length <= 0
-            ? "YOUR CAR IS EMPTY"
-            : data.map(dat => (
-                <li style={{ padding: "10px" }} key={data.message}>
-                  <span style={{ color: "gray" }}> item: </span> {dat.id}{" "}
-                  <br />
-                  <span style={{ color: "gray" }}> Name: </span>
-                  {dat.message}
-                </li>
-              ))}
-        </ul>
-        <div style={{ padding: "10px" }}>
-          <input
-            type="text"
-            onChange={e => this.setState({ message: e.target.value })}
-            placeholder="Add Your Pie"
-            style={{ width: "200px" }}
-          />
-          <button onClick={() => this.putDataToDB(this.state.message)}>
-            ADD
+      <div class="container-menu  ">
+        <div class="col s12">
+          <div>
+            <div class="col s6">
+              <div style={{ padding: "10px" }}>
+                <input
+                  type="text"
+                  onChange={e => this.setState({ message: e.target.value })}
+                  placeholder="Add Your Pie"
+                  style={{ width: "200px" }}
+                />
+                <button class="waves-effect waves-light btn-large" onClick={() => this.putDataToDB(this.state.message)}>
+                  ADD
           </button>
-        </div>
-        <div style={{ padding: "10px" }}>
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ idToDelete: e.target.value })}
-            placeholder="Type id to Remove"
-          />
-          <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-            REMOVE
+              </div>
+              <div style={{ padding: "10px" }}>
+                <input
+                  type="text"
+                  style={{ width: "200px" }}
+                  onChange={e => this.setState({ idToDelete: e.target.value })}
+                  placeholder="Type id to Remove"
+                />
+                <button class="waves-effect waves-light btn-large"onClick={() => this.deleteFromDB(this.state.idToDelete)}>
+                  REMOVE
           </button>
-          
-        </div>
+              </div>
 
-        <div style={{ padding: "10px" }}>
-      
-        <button onClick={this.isHidden} >
-          Checkout
-        </button>
-        {!this.state.isHidden}
-        
-        </div>
+              <div style={{ padding: "10px" }}>
+                <button class="waves-effect waves-light btn-large" onClick={this.isHidden}>Checkout</button>
+                {!this.state.isHidden}
+              </div>
+            </div>
+          </div >
+          <div class="cart">
 
+            <ul>
+              {data.length <= 0
+                ? "YOUR CAR IS EMPTY"
+                : data.map(dat => (
+                  <li class="collection" style={{ padding: "10px" }} key={data.message}>
+                    <span class="collection" style={{ color: "gray" }}> item: </span> {dat.id} <br />
+                    <span class="collection" style={{ color: "gray" }}> Name: </span>
+                    {dat.message}
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      
     );
   }
 }
