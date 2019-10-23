@@ -4,8 +4,13 @@
     background-color: #e5eecc;
     border: solid 1px #c3c3c3;
     width:40%;
-    margin-left: 20px
+    margin-left: 40px;
+    /* margin-right: 0; */
+    margin: 0;
   }
+.container {
+  margin: 0;
+}
   
   #panel {
     display:fixed;
