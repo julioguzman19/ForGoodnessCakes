@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Bread from "./bread.jpg"
 import "./style.css";
 
 class DB extends Component {
@@ -97,22 +98,22 @@ class DB extends Component {
       update: { message: updateToApply }
     });
   };
-
   handleClick(e) {
     document.getElementById("cartOrder").innerHTML = "<span style='font-size:80px'>Thank you for your order!</span>";
-    
-   
   }
+
   // here is our UI
   // it is easy to understand their functions when you
   // see them render into our screen
   render() {
     const { data } = this.state;
     return (
-      <div id="cartOrder" class="container-menu  ">
-        <div class="col s12">
-          <div>
-            <div class="col s6">
+      <div id="cartOrder" class="container-menu">
+        <div class="col s12 m7">
+
+          <div class="card">
+            <div id="cartOrder" class="col s6" class="card-image">
+              <img id="img1" src={Bread} />
               <div style={{ padding: "10px" }}>
                 <input
                   type="text"
@@ -120,41 +121,41 @@ class DB extends Component {
                   placeholder="Add Your Pie"
                   style={{ width: "200px" }}
                 />
-                <button class="waves-effect waves-light btn-large" onClick={() => this.putDataToDB(this.state.message)}>
-                  ADD
+                <button class="a1887 f brown lighten-2 btn-large" onClick={() => this.putDataToDB(this.state.message)}>
+                ADD
           </button>
               </div>
               <div style={{ padding: "10px" }}>
-                <input
+              <input
                   type="text"
                   style={{ width: "200px" }}
                   onChange={e => this.setState({ idToDelete: e.target.value })}
-                  placeholder="Type id to Remove"
-                />
-                <button class="waves-effect waves-light btn-large"onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-                  REMOVE
-          </button>
-              </div>
+                placeholder="Type id to Remove"/>
+              <button class="a1887f brown lighten-2 btn-large" onClick={() => this.deleteFromDB(this.state.idToDelete)}>
+                REMOVE
+               </button>
+                </div>
 
-              <div style={{ padding: "10px" }}>
-                <button class="waves-effect waves-light btn-large" onClick={this.handleClick.bind(this)}>Checkout</button>
+                <div style={{ padding: "10px" }}>
+                <button class="a1887f brown lighten-2 btn-large" onClick={this.handleClick.bind(this)}>Checkout</button>
                 {!this.state.isHidden}
-              </div>
-            </div>
-          </div >
-          <div class="cart">
+                   </div>
+       
+               <div class="cart">
 
             <ul>
               {data.length <= 0
-                ? "YOUR CAR IS EMPTY"
-                : data.map(dat => (
-                  <li class="collection" style={{ padding: "10px" }} key={data.message}>
-                    <span class="collection" style={{ color: "gray" }}> item: </span> {dat.id} <br />
-                    <span class="collection" style={{ color: "gray" }}> Name: </span>
+                 ? "YOUR CAR IS EMPTY"
+                 : data.map(dat => (
+                   <li class="collection"  key={data.message}>
+                    <span class="collection" > ID: </span> {dat.id} <br />
+                    <span class="collection" > Name: </span>
                     {dat.message}
                   </li>
                 ))}
             </ul>
+            </div>
+          </div >
           </div>
         </div>
       </div>

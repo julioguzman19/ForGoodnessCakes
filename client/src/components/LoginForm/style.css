@@ -11,8 +11,12 @@
     position: absolute;
     z-index: 2;
 }
+
+body {
+    font-family: 'PT Serif', serif;
+}
+
 .formColor{
-background-color:white;
-opacity:0.75;
-border-radius: 13%;
+    opacity: 0.75;
+    border-radius: 13%;
 }
