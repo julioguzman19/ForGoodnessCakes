@@ -24,9 +24,9 @@ export default function NestingExample() {
         <Title />
 
         <div id="menu">
-          <Link to="/">Home</Link>
+          <Link to="/" id="navColor">Home  • </Link>
 
-          <Link to="/topics"> Order Now</Link>
+          <Link to="/topics" id="navColor"> Order Now</Link>
         </div>
 
         <Switch>

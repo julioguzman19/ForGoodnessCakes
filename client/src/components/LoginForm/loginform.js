@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./style.css";
 
 class LoginForm extends Component {
     constructor() {
@@ -28,9 +29,8 @@ class LoginForm extends Component {
             return (
                <div className="LogInContainer"> 
                 <div className="loginCss">
-                    <h4>Login</h4>
                     <form className="form-horizontal">
-                        <div className="form-group">
+                        <div id="loginFormat" className="form-group">
                                 <label className="form-label" htmlFor="username"></label>
                                 <input className="form-input"
                                     type="text"
@@ -41,7 +41,7 @@ class LoginForm extends Component {
                                     onChange={this.handleChange}
                                 />
                         </div>
-                        <div className="form-group">
+                        <div id="loginFormat" className="form-group">
                                 <label className="form-label" htmlFor="password"></label>
                                 <input className="form-input"
                                     placeholder="Password"
