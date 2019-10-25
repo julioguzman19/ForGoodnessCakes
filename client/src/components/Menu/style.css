@@ -1,11 +1,16 @@
 #panel, #flip {
     padding: 5px;
     text-align: center;
-    background-color: #e5eecc;
+    background-color: white;
     border: solid 1px #c3c3c3;
     width:40%;
-    margin-left: 20px
+    margin-left: 40px;
+    /* margin-right: 0; */
+    margin: 0;
   }
+.container {
+  margin: 0;
+}
   
   #panel {
     display:fixed;
@@ -13,11 +18,15 @@
   }
    h2, h4 {
     margin-left: 20px;
-    color: brown;
+    color: black;
 
    }
 
    h4{
-       color: green;
+       color: black;
        margin-bottom: 20px;
    }
+
+body {
+  font-family: 'PT Serif', serif;
+}
