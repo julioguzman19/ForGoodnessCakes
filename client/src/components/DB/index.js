@@ -98,6 +98,9 @@ class DB extends Component {
       update: { message: updateToApply }
     });
   };
+  handleClick(e) {
+    document.getElementById("cartOrder").innerHTML = "<span style='font-size:80px'>Thank you for your order!</span>";
+  }
 
   // here is our UI
   // it is easy to understand their functions when you
@@ -135,7 +138,7 @@ class DB extends Component {
               </div>
 
               <div style={{ padding: "10px" }}>
-                <button class="a1887f brown lighten-2 btn-large" onClick={this.isHidden}>Checkout</button>
+                <button class="a1887f brown lighten-2 btn-large" onClick={this.handleClick.bind(this)}>Checkout</button>
                 {!this.state.isHidden}
               </div>
        

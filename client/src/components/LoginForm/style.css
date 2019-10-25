@@ -13,3 +13,8 @@
 body {
     font-family: 'PT Serif', serif;
 }
+
+.formColor{
+    opacity: 0.75;
+    border-radius: 13%;
+}

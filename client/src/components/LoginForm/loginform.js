@@ -29,7 +29,7 @@ class LoginForm extends Component {
             return (
                <div className="LogInContainer"> 
                 <div className="loginCss">
-                    <form className="form-horizontal">
+                    <form className="form-horizontal formColor">
                         <div id="loginFormat" className="form-group">
                                 <label className="form-label" htmlFor="username"></label>
                                 <input className="form-input"
