@@ -1,8 +1,19 @@
-img {
-  height: 600px;
-  width: 600px;
+#img1 {
+  margin: auto;
+  margin-top: 10px;
+  height: 500px;
+  width: 500px;
   border-radius: 50%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  z-index:1;
+}
+
+#img2{
+  height: 350px;
+  width: 350px;
+}
+#img3{
+    height: 350px;
+  width: 350px;
 }

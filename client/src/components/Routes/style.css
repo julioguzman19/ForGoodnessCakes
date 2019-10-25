@@ -1,9 +1,9 @@
-h1{
-    color: red;
-    text-align: center;
-
+#navColor{
+    color: white;
 }
 
 #menu{
-margin-left: 10%;
+
+margin: auto;
+text-align: center;
 }

@@ -1,0 +1,11 @@
+#loginFormat{
+    width: 300px;
+}
+
+.LogInContainer{
+    margin: auto;
+    margin-left: 40%;
+    margin-top: 200px;
+    position: absolute;
+    z-index: 2;
+}
