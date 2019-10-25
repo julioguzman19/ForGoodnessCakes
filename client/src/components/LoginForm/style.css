@@ -9,3 +9,7 @@
     position: absolute;
     z-index: 2;
 }
+
+body {
+    font-family: 'PT Serif', serif;
+}
