@@ -1,6 +1,8 @@
 #loginFormat{
     width: 300px;
+    
 }
+
 
 .LogInContainer{
     margin: auto;
@@ -8,4 +10,9 @@
     margin-top: 200px;
     position: absolute;
     z-index: 2;
+}
+.formColor{
+background-color:white;
+opacity:0.75;
+border-radius: 13%;
 }

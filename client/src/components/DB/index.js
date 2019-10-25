@@ -98,13 +98,18 @@ class DB extends Component {
     });
   };
 
+  handleClick(e) {
+    document.getElementById("cartOrder").innerHTML = "<span style='font-size:80px'>Thank you for your order!</span>";
+    
+   
+  }
   // here is our UI
   // it is easy to understand their functions when you
   // see them render into our screen
   render() {
     const { data } = this.state;
     return (
-      <div class="container-menu  ">
+      <div id="cartOrder" class="container-menu  ">
         <div class="col s12">
           <div>
             <div class="col s6">
@@ -132,7 +137,7 @@ class DB extends Component {
               </div>
 
               <div style={{ padding: "10px" }}>
-                <button class="waves-effect waves-light btn-large" onClick={this.isHidden}>Checkout</button>
+                <button class="waves-effect waves-light btn-large" onClick={this.handleClick.bind(this)}>Checkout</button>
                 {!this.state.isHidden}
               </div>
             </div>
