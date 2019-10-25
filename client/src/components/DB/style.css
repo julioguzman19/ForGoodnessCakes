@@ -1,5 +1,12 @@
 .cart {
-  background: red;
-  margin-left: 60%;
-  margin-top: 5%;
+      /* margin-left: 75%; */
+      /* margin-top:-400px; */
+  }
+
+.container-menu {
+  margin-left: 55%;
+  position: absolute;
+  bottom: 270px;
+  top: 250px;
+
 }

@@ -1,3 +1,9 @@
-.test{
-    background:yellow;
+#navColor{
+    color: white;
+}
+
+#menu{
+
+margin: auto;
+text-align: center;
 }
