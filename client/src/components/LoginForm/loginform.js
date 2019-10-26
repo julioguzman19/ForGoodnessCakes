@@ -11,7 +11,7 @@ class LoginForm extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-  
+
     }
 
     handleChange(event) {
@@ -26,30 +26,30 @@ class LoginForm extends Component {
     }
 
     render() {
-            return (
-               <div className="LogInContainer"> 
+        return (
+            <div className="LogInContainer">
                 <div className="loginCss">
                     <form className="form-horizontal formColor">
                         <div id="loginFormat" className="form-group">
-                                <label className="form-label" htmlFor="username"></label>
-                                <input className="form-input"
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}
-                                />
+                            <label className="form-label" htmlFor="username"></label>
+                            <input className="form-input"
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Username"
+                                value={this.state.username}
+                                onChange={this.handleChange}
+                            />
                         </div>
                         <div id="loginFormat" className="form-group">
-                                <label className="form-label" htmlFor="password"></label>
-                                <input className="form-input"
-                                    placeholder="Password"
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                />
+                            <label className="form-label" htmlFor="password"></label>
+                            <input className="form-input"
+                                placeholder="Password"
+                                type="password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                            />
                         </div>
                         <div className="form-group">
                             <button
@@ -60,10 +60,10 @@ class LoginForm extends Component {
                         </div>
                     </form>
                 </div>
-               </div> 
-            )
-        }
+            </div>
+        )
     }
+}
 
 
 export default LoginForm
