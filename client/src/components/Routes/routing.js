@@ -1,6 +1,10 @@
 import React from "react";
 import DB from "../DB";
 import Menu from "../Menu";
+import Title from "../Title";
+import HomeBody from "../HomeBody";
+import "./style.css";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,17 +14,20 @@ import {
   useRouteMatch
 } from "react-router-dom";
 import "./style.css";
+import LoginForm from "../LoginForm/loginform";
+
 
 export default function NestingExample() {
   return (
     <Router>
       <div>
-        <h1 style={{ color: "red" }}>For GoodNess Cakes</h1>
-        <Link to="/" class="t">Home</Link>
+        <Title />
 
-        <Link to="/topics"> Order Now</Link>
+        <div id="menu">
+          <Link to="/" id="navColor">Home  • </Link>
 
-        <hr />
+          <Link to="/topics" id="navColor"> Order Now</Link>
+        </div>
 
         <Switch>
           <Route exact path="/">
@@ -37,9 +44,12 @@ export default function NestingExample() {
 
 function Home() {
   return (
-    <div>
-      <h2></h2>
-    </div>
+    <switch>
+      <div id="home">
+        <LoginForm />
+        <HomeBody />
+      </div>
+    </switch>
   );
 }
 
@@ -51,22 +61,16 @@ function Topics() {
 
   return (
     <div>
-      <h2>Your Order</h2>
-
-      <div></div>
-
       <Switch>
         <Route exact path={path}>
-          <h4 style={{ color: "black" }}>Please Choose From Our Menu : </h4>
           <Menu />
           <DB />
         </Route>
         <Route path={`${path}/:topicId`}>
-         
+          <Topics />
         </Route>
+        <Route path={`${path}/:topicId`}></Route>
       </Switch>
     </div>
   );
 }
-
-

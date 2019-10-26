@@ -1,0 +1,21 @@
+#loginFormat{
+    width: 300px;
+    
+}
+.LogInContainer{
+    margin: auto;
+    margin-left: 40%;
+    margin-top: 200px;
+    position: absolute;
+    z-index: 2;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+}
+
+.formColor{
+    opacity: 0.75;
+    border-radius: 6%;
+    background-color:white;
+}

@@ -1,5 +1,22 @@
 .cart {
-  background: red;
-  margin-left: 60%;
-  margin-top: 5%;
+  background-color: white;
+  border: hidden;
+  }
+
+.container-menu {
+  margin-left: 55%;
+  position: absolute;
+  bottom: 270px;
+  top: 250px;
+
+}
+
+body {
+  font-family: 'PT Serif', serif;
+}
+
+.collection {
+  border-color: white;
+  font-family: 'PT Serif', serif;
+  font-size: 30px;
 }

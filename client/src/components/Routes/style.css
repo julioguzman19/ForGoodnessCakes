@@ -1,3 +1,10 @@
-.test{
-    background:yellow;
+#navColor{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#menu{
+margin: auto;
+text-align: center;
 }

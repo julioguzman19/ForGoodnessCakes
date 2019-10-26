@@ -1,0 +1,11 @@
+.title {
+  font-family: 'PT Serif', serif;
+  flex: center;
+  font-size: 80px;
+  margin-top: 10px;
+  color: rgb(219, 209, 209);
+  background-color: antiquewhite;
+  color: black;
+  font-family: 'PT Serif', serif;
+  font-family: 'Cookie', cursive;
+}
