@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const Data = require('./data');
 
-const API_PORT = 3001;
+const API_PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors());
 const router = express.Router();
@@ -15,7 +15,8 @@ const dbRoute = 'mongodb+srv://ifiuza:Marime2018@cluster0-k7y6r.mongodb.net/test
 
 
 // connects our back end code with the database
-mongoose.connect(dbRoute, { useNewUrlParser: true });
+const MONGODB_URI = process.env.MONGODB_URI || dbRoute;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 let db = mongoose.connection;
 
