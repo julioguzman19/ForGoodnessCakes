@@ -1,6 +1,6 @@
 .cart {
-  background-color: white;
-  border: hidden;
+      /* margin-left: 75%; */
+      /* margin-top:-400px; */
   }
 
 .container-menu {
@@ -9,14 +9,4 @@
   bottom: 270px;
   top: 250px;
 
-}
-
-body {
-  font-family: 'PT Serif', serif;
-}
-
-.collection {
-  border-color: white;
-  font-family: 'PT Serif', serif;
-  font-size: 30px;
 }

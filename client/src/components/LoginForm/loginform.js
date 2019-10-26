@@ -29,7 +29,7 @@ class LoginForm extends Component {
             return (
                <div className="LogInContainer"> 
                 <div className="loginCss">
-                    <form className="form-horizontal formColor">
+                    <form className="form-horizontal">
                         <div id="loginFormat" className="form-group">
                                 <label className="form-label" htmlFor="username"></label>
                                 <input className="form-input"
@@ -51,9 +51,9 @@ class LoginForm extends Component {
                                     onChange={this.handleChange}
                                 />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group ">
                             <button
-                                className="btn btn-lg"
+                                className="btn btn-primary"
                                 id="loginButton"
                                 onClick={this.handleSubmit}
                                 type="submit">Submit</button>

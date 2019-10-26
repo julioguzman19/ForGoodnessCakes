@@ -1,7 +1,7 @@
 #panel, #flip {
     padding: 5px;
     text-align: center;
-    background-color: white;
+    background-color: #e5eecc;
     border: solid 1px #c3c3c3;
     width:40%;
     margin-left: 40px;
@@ -18,15 +18,11 @@
   }
    h2, h4 {
     margin-left: 20px;
-    color: black;
+    color: brown;
 
    }
 
    h4{
-       color: black;
+       color: green;
        margin-bottom: 20px;
    }
-
-body {
-  font-family: 'PT Serif', serif;
-}
