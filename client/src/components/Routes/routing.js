@@ -10,7 +10,6 @@ import {
   Switch,
   Route,
   Link,
-  useParams,
   useRouteMatch
 } from "react-router-dom";
 import "./style.css";
@@ -57,7 +56,7 @@ function Topics() {
   // The `path` lets us build <Route> paths that are
   // relative to the parent route, while the `url` lets
   // us build relative links.
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
 
   return (
     <div>

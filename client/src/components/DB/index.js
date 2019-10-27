@@ -70,7 +70,7 @@ class DB extends Component {
     parseInt(idTodelete);
     let objIdToDelete = null;
     this.state.data.forEach(dat => {
-      if (dat.id == idTodelete) {
+      if (dat.id === idTodelete) {
         objIdToDelete = dat._id;
       }
     });
@@ -88,7 +88,7 @@ class DB extends Component {
     let objIdToUpdate = null;
     parseInt(idToUpdate);
     this.state.data.forEach(dat => {
-      if (dat.id == idToUpdate) {
+      if (dat.id === idToUpdate) {
         objIdToUpdate = dat._id;
       }
     });
@@ -112,7 +112,7 @@ class DB extends Component {
         <div class="col s12 m7">
 
           <div class="card">
-            <div id="cartOrder" class="col s6" class="card-image">
+            <div id="cartOrder" class="col s6 card-image">
               <img id="img1" src={Bread} />
               <div style={{ padding: "10px" }}>
                 <input
@@ -122,40 +122,40 @@ class DB extends Component {
                   style={{ width: "200px" }}
                 />
                 <button class="a1887 f brown lighten-2 btn-large" onClick={() => this.putDataToDB(this.state.message)}>
-                ADD
+                  ADD
           </button>
               </div>
               <div style={{ padding: "10px" }}>
-              <input
+                <input
                   type="text"
                   style={{ width: "200px" }}
                   onChange={e => this.setState({ idToDelete: e.target.value })}
-                placeholder="Type id to Remove"/>
-              <button class="a1887f brown lighten-2 btn-large" onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-                REMOVE
+                  placeholder="Type id to Remove" />
+                <button class="a1887f brown lighten-2 btn-large" onClick={() => this.deleteFromDB(this.state.idToDelete)}>
+                  REMOVE
                </button>
-                </div>
+              </div>
 
-                <div style={{ padding: "10px" }}>
+              <div style={{ padding: "10px" }}>
                 <button class="a1887f brown lighten-2 btn-large" onClick={this.handleClick.bind(this)}>Checkout</button>
                 {!this.state.isHidden}
-                   </div>
-       
-               <div class="cart">
+              </div>
 
-            <ul>
-              {data.length <= 0
-                 ? "YOUR CAR IS EMPTY"
-                 : data.map(dat => (
-                   <li class="collection"  key={data.message}>
-                    <span class="collection" > ID: </span> {dat.id} <br />
-                    <span class="collection" > Name: </span>
-                    {dat.message}
-                  </li>
-                ))}
-            </ul>
-            </div>
-          </div >
+              <div class="cart">
+
+                <ul>
+                  {data.length <= 0
+                    ? "YOUR CAR IS EMPTY"
+                    : data.map(dat => (
+                      <li class="collection" key={data.message}>
+                        <span class="collection" > ID: </span> {dat.id} <br />
+                        <span class="collection" > Name: </span>
+                        {dat.message}
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div >
           </div>
         </div>
       </div>

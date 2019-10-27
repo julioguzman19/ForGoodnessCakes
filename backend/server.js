@@ -4,9 +4,10 @@ var cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const Data = require('./data');
-const path = require('path');
+//const path = require('path');
 
-const API_PORT = process.env.PORT || 8080;
+//const API_PORT = process.env.PORT || 8080;
+const API_PORT = 8080;
 const app = express();
 app.use(cors());
 const router = express.Router();
@@ -16,7 +17,8 @@ const dbRoute = 'mongodb+srv://ifiuza:Marime2018@cluster0-k7y6r.mongodb.net/test
 
 
 // connects our back end code with the database
-const MONGODB_URI = process.env.MONGODB_URI || dbRoute;
+//const MONGODB_URI = process.env.MONGODB_URI || dbRoute;
+const MONGODB_URI = dbRoute;
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 let db = mongoose.connection;
@@ -85,11 +87,11 @@ router.post('/putData', (req, res) => {
 // append /api for our http requests
 app.use('/api', router);
 
-if (process.env.NODE_ENV === 'production') {
+/* if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
-}
+} */
 // launch our backend into a port
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
