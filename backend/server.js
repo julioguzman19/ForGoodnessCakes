@@ -6,8 +6,7 @@ const logger = require('morgan');
 const Data = require('./data');
 //const path = require('path');
 
-//const API_PORT = process.env.PORT || 8080;
-const API_PORT = 8080;
+const API_PORT = process.env.PORT || 8080;
 const app = express();
 app.use(cors());
 const router = express.Router();
@@ -18,8 +17,8 @@ const dbRoute = 'mongodb+srv://ifiuza:Marime2018@cluster0-k7y6r.mongodb.net/test
 
 // connects our back end code with the database
 //const MONGODB_URI = process.env.MONGODB_URI || dbRoute;
-const MONGODB_URI = dbRoute;
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+//const MONGODB_URI = dbRoute;
+mongoose.connect(dbRoute, { useNewUrlParser: true });
 
 let db = mongoose.connection;
 
@@ -37,6 +36,7 @@ app.use(logger('dev'));
 // this is our get method
 // this method fetches all available data in our database
 router.get('/getData', (req, res) => {
+  console.log('hit')
   Data.find((err, data) => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true, data: data });
@@ -85,7 +85,9 @@ router.post('/putData', (req, res) => {
 });
 
 // append /api for our http requests
-app.use('/api', router);
+// app.use('/api', router);
+router.use('/api', router);
+app.use(router);
 
 /* if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

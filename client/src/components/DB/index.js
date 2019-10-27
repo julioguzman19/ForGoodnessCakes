@@ -20,11 +20,12 @@ class DB extends Component {
   // then we incorporate a polling logic so that we can easily see if our db has
   // changed and implement those changes into our UI
   componentDidMount() {
+    console.log('hit did mount')
     this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval });
-    }
+    // if (!this.state.intervalIsSet) {
+    //   let interval = setInterval(this.getDataFromDb, 1000);
+    //   this.setState({ intervalIsSet: interval });
+    // }
   }
 
   // never let a process live forever
@@ -44,7 +45,7 @@ class DB extends Component {
   // our first get method that uses our backend api to
   // fetch data from our data base
   getDataFromDb = () => {
-    fetch("http://localhost:3001/api/getData")
+    fetch("/api/getData")
       .then(data => data.json())
       .then(res => this.setState({ data: res.data }));
   };
@@ -58,7 +59,7 @@ class DB extends Component {
       ++idToBeAdded;
     }
 
-    axios.post("http://localhost:3001/api/putData", {
+    axios.post("/api/putData", {
       id: idToBeAdded,
       message: message
     });
@@ -75,7 +76,7 @@ class DB extends Component {
       }
     });
 
-    axios.delete("http://localhost:3001/api/deleteData", {
+    axios.delete("/api/deleteData", {
       data: {
         id: objIdToDelete
       }
@@ -93,7 +94,7 @@ class DB extends Component {
       }
     });
 
-    axios.post("http://localhost:3001/api/updateData", {
+    axios.post("/api/updateData", {
       id: objIdToUpdate,
       update: { message: updateToApply }
     });
