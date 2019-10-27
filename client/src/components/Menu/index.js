@@ -4,7 +4,7 @@ import "./style.css";
 function Menu() {
   return (
 
-    <div class="row" class="container">
+    <div class="row container">
       <div class="col s12">
 
         <h4>Your Order</h4>
